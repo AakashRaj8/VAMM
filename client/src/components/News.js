@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem.js'
 import PropTypes from 'prop-types'
-
+import './News.css'
 
 export class News extends Component {
 
@@ -68,11 +68,11 @@ export class News extends Component {
             <>
             <h1 className="container my-3 text-center">Todays Top Headlines</h1>
             {/* {this.state.loading && <Spinner/>} */}
-            <div className="container my-2">
-               <div className="row">
+            <div className="news-container">
+               <div className="article-row">
                {this.state.articles.map((element)=>{
-                    return(<div className="col-md-3" key = {element.url}>
-                    <NewsItem title={element.title?element.title.slice(0,44):""} description={element.description?element.description.slice(0,88):""} imageUrl={element.urlToImage} newsUrl={element.url}/>
+                    return(<div className="news-item-box" key = {element.url}>
+                    <NewsItem title={element.title?element.title.slice(0,46):""} description={element.description?element.description.slice(0,88):""} imageUrl={element.urlToImage} newsUrl={element.url}/>
                 </div>)
                 })};
                </div>

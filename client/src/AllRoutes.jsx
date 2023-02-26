@@ -28,7 +28,9 @@ export const AllRoutes=()=>{
             <Route exact path="/technology" element={ <News key="technology" pageSize={8} catagory="technology"/>}>
 
             </Route>
-                <Route path='/signup' element={<Signup />}/>
+
+            <Route path='/signup' element={<Signup />}/>
+            
             <Route path='/login' element={<Login />}/>
         </Routes>
     )
