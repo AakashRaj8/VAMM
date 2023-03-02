@@ -12,12 +12,16 @@ import '../NewsItem.js'
 
 const Navbar = () => {
     // const dispatch=useDispatch()
-    const User = null;//useSelector((state) => (state.currentUserReducer));
+    const User = localStorage.getItem("token");//useSelector((state) => (state.currentUserReducer));
     const [show, setShow] = useState(false)
     // useEffect(()=>{
     //     dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
     // },[dispatch])
-
+    const Logout=()=>{
+        localStorage.removeItem("token");
+        window.location.reload();
+        window.location="/";
+    }
 
     return (
         <>
@@ -63,7 +67,7 @@ const Navbar = () => {
                 <Link to={'/Login'} className='nav-item nav-links'> Log In </Link> :
                 <>
                     <img src={profile} />
-                    <button className={'nav-item nav-links'}>
+                    <button className={'nav-item nav-links'} onClick={Logout}>
                         Logout
                     </button>
                 </> }
